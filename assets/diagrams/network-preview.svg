@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Disclosure network preview</title>
+  <desc id="desc">A network graph connecting Tom DeLonge, John Podesta, McCasland, TTSA advisors, and downstream UAP figures.</desc>
+  <rect width="960" height="600" rx="26" fill="#060606"/>
+  <g stroke="#333" stroke-width="1.5">
+    <path d="M480 300 294 170"/>
+    <path d="M480 300 662 170"/>
+    <path d="M480 300 178 324"/>
+    <path d="M480 300 480 108"/>
+    <path d="M480 300 770 324"/>
+    <path d="M480 300 318 474"/>
+    <path d="M480 300 634 474"/>
+  </g>
+  <g font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2" text-anchor="middle">
+    <circle cx="480" cy="300" r="84" fill="#15110d" stroke="#c9a87c" stroke-width="2"/>
+    <text x="480" y="293" fill="#f3ede4">MCCASLAND</text>
+    <text x="480" y="316" fill="#c9a87c">GATEKEEPER?</text>
+    <g>
+      <circle cx="480" cy="108" r="48" fill="#101010" stroke="#70a0d9"/>
+      <text x="480" y="112" fill="#dbe8f7">PODESTA</text>
+    </g>
+    <g>
+      <circle cx="294" cy="170" r="44" fill="#101010" stroke="#d4a843"/>
+      <text x="294" y="174" fill="#f8edc9">DeLONGE</text>
+    </g>
+    <g>
+      <circle cx="662" cy="170" r="44" fill="#101010" stroke="#56b29a"/>
+      <text x="662" y="174" fill="#e1fff5">TTSA</text>
+    </g>
+    <g>
+      <circle cx="178" cy="324" r="44" fill="#101010" stroke="#70a0d9"/>
+      <text x="178" y="328" fill="#dbe8f7">ELIZONDO</text>
+    </g>
+    <g>
+      <circle cx="770" cy="324" r="44" fill="#101010" stroke="#c85f88"/>
+      <text x="770" y="328" fill="#ffd7e7">MELLON</text>
+    </g>
+    <g>
+      <circle cx="318" cy="474" r="44" fill="#101010" stroke="#56b29a"/>
+      <text x="318" y="478" fill="#e1fff5">SEMIVAN</text>
+    </g>
+    <g>
+      <circle cx="634" cy="474" r="44" fill="#101010" stroke="#d4a843"/>
+      <text x="634" y="478" fill="#f8edc9">GRUSCH</text>
+    </g>
+  </g>
+</svg>

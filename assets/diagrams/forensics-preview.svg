@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Disappearance forensics preview</title>
+  <desc id="desc">A timeline and scenario matrix preview summarizing the disappearance, search response, and open contradictions.</desc>
+  <rect width="960" height="600" rx="26" fill="#060606"/>
+  <g font-family="JetBrains Mono, monospace" letter-spacing="2">
+    <text x="90" y="112" fill="#c9a87c" font-size="14">FEB 27</text>
+    <text x="90" y="138" fill="#f3ede4" font-size="24">LAST SEEN</text>
+    <path d="M88 188H862" stroke="#524232" stroke-width="3"/>
+    <g font-size="12">
+      <circle cx="180" cy="188" r="10" fill="#c54f45"/>
+      <text x="180" y="228" fill="#dc8f86" text-anchor="middle">HOME</text>
+      <circle cx="356" cy="188" r="10" fill="#d4a843"/>
+      <text x="356" y="228" fill="#d5b167" text-anchor="middle">SILVER ALERT</text>
+      <circle cx="536" cy="188" r="10" fill="#70a0d9"/>
+      <text x="536" y="228" fill="#8fb2d8" text-anchor="middle">FBI</text>
+      <circle cx="720" cy="188" r="10" fill="#56b29a"/>
+      <text x="720" y="228" fill="#8cc8ba" text-anchor="middle">600+ CAMERAS</text>
+    </g>
+    <rect x="100" y="312" width="230" height="170" rx="18" fill="#101010" stroke="#c54f45"/>
+    <text x="215" y="350" fill="#ffd4cf" font-size="14" text-anchor="middle">KNOWN ABSENCES</text>
+    <text x="215" y="382" fill="#f3ede4" font-size="13" text-anchor="middle">NO FOOTAGE</text>
+    <text x="215" y="408" fill="#f3ede4" font-size="13" text-anchor="middle">NO SCENT TRAIL</text>
+    <text x="215" y="434" fill="#f3ede4" font-size="13" text-anchor="middle">NO PHYSICAL TRACE</text>
+    <rect x="370" y="312" width="230" height="170" rx="18" fill="#101010" stroke="#c9a87c"/>
+    <text x="485" y="350" fill="#f8edc9" font-size="14" text-anchor="middle">CENTRAL TENSION</text>
+    <text x="485" y="382" fill="#f3ede4" font-size="13" text-anchor="middle">SILVER ALERT</text>
+    <text x="485" y="408" fill="#f3ede4" font-size="13" text-anchor="middle">vs.</text>
+    <text x="485" y="434" fill="#f3ede4" font-size="13" text-anchor="middle">FIT / NOT CONFUSED</text>
+    <rect x="640" y="312" width="230" height="170" rx="18" fill="#101010" stroke="#70a0d9"/>
+    <text x="755" y="350" fill="#dbe8f7" font-size="14" text-anchor="middle">OPEN QUESTIONS</text>
+    <text x="755" y="382" fill="#f3ede4" font-size="13" text-anchor="middle">VEHICLE STATUS</text>
+    <text x="755" y="408" fill="#f3ede4" font-size="13" text-anchor="middle">K-9 RESULTS</text>
+    <text x="755" y="434" fill="#f3ede4" font-size="13" text-anchor="middle">DIGITAL FORENSICS</text>
+  </g>
+</svg>

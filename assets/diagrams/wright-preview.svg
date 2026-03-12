@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Wright-Patterson lineage preview</title>
+  <desc id="desc">A horizontal lineage diagram linking Wright Field, T-2, ATIC, FTD, NASIC, and AFRL.</desc>
+  <rect width="960" height="600" rx="26" fill="#080808"/>
+  <path d="M110 308H850" stroke="#544432" stroke-width="3"/>
+  <g font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2" text-anchor="middle">
+    <g>
+      <circle cx="130" cy="308" r="36" fill="#111" stroke="#d4a843"/>
+      <text x="130" y="312" fill="#f8edc9">1947</text>
+      <text x="130" y="370" fill="#caa95a">WRIGHT FIELD</text>
+    </g>
+    <g>
+      <circle cx="280" cy="308" r="36" fill="#111" stroke="#70a0d9"/>
+      <text x="280" y="312" fill="#dbe8f7">T-2</text>
+      <text x="280" y="370" fill="#8fb2d8">INTEL</text>
+    </g>
+    <g>
+      <circle cx="430" cy="308" r="36" fill="#111" stroke="#56b29a"/>
+      <text x="430" y="312" fill="#e1fff5">ATIC</text>
+      <text x="430" y="370" fill="#8cc8ba">BLUE BOOK</text>
+    </g>
+    <g>
+      <circle cx="580" cy="308" r="36" fill="#111" stroke="#c85f88"/>
+      <text x="580" y="312" fill="#ffd7e7">FTD</text>
+      <text x="580" y="370" fill="#d98aaa">FOREIGN TECH</text>
+    </g>
+    <g>
+      <circle cx="730" cy="308" r="36" fill="#111" stroke="#70a0d9"/>
+      <text x="730" y="312" fill="#dbe8f7">NASIC</text>
+      <text x="730" y="370" fill="#8fb2d8">UAP MANDATE</text>
+    </g>
+    <rect x="372" y="96" width="216" height="96" rx="22" fill="#14100d" stroke="#c9a87c"/>
+    <text x="480" y="134" fill="#f5efe7" font-size="18">AFRL</text>
+    <text x="480" y="158" fill="#c9a87c" font-size="12">MCCASLAND COMMAND</text>
+    <path d="M480 192V272" stroke="#5b4a36" stroke-width="2"/>
+  </g>
+</svg>

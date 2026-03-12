@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Kirtland geography preview</title>
+  <desc id="desc">A schematic Albuquerque map showing McCasland's home, Sandia foothills, Kirtland, Sandia Labs, KUMMSC, and ATA.</desc>
+  <rect width="960" height="600" rx="26" fill="#060606"/>
+  <path d="M650 40C720 160 790 290 780 560" fill="none" stroke="#2f3c25" stroke-width="90" opacity=".7"/>
+  <path d="M86 470C210 420 300 390 430 360" fill="none" stroke="#263248" stroke-width="14" opacity=".6"/>
+  <g font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2">
+    <circle cx="640" cy="126" r="40" fill="#121212" stroke="#c9a87c"/>
+    <text x="640" y="131" fill="#f5efe7" text-anchor="middle">HOME</text>
+    <circle cx="750" cy="208" r="40" fill="#121212" stroke="#56b29a"/>
+    <text x="750" y="212" fill="#e1fff5" text-anchor="middle">FOOTHILLS</text>
+    <circle cx="500" cy="344" r="40" fill="#121212" stroke="#70a0d9"/>
+    <text x="500" y="348" fill="#dbe8f7" text-anchor="middle">KIRTLAND</text>
+    <circle cx="620" cy="384" r="40" fill="#121212" stroke="#d4a843"/>
+    <text x="620" y="388" fill="#f8edc9" text-anchor="middle">SANDIA</text>
+    <circle cx="444" cy="466" r="40" fill="#121212" stroke="#c85f88"/>
+    <text x="444" y="470" fill="#ffd7e7" text-anchor="middle">KUMMSC</text>
+    <circle cx="294" cy="420" r="40" fill="#121212" stroke="#56b29a"/>
+    <text x="294" y="424" fill="#e1fff5" text-anchor="middle">ATA</text>
+    <path d="M640 166 750 168 500 304 620 344 444 426 294 380" fill="none" stroke="#5c4b35" stroke-width="2"/>
+  </g>
+</svg>

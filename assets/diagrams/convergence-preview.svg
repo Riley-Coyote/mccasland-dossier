@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">McCasland convergence map preview</title>
+  <desc id="desc">A central node for McCasland connected to SAPOC, AFRL, Kirtland, the disclosure network, Wright-Patterson, and the disappearance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" rx="26" fill="url(#bg)"/>
+  <g opacity=".5" stroke="#3d352b" stroke-width="1">
+    <path d="M480 300 165 156"/>
+    <path d="M480 300 480 114"/>
+    <path d="M480 300 795 156"/>
+    <path d="M480 300 220 454"/>
+    <path d="M480 300 480 486"/>
+    <path d="M480 300 748 454"/>
+  </g>
+  <circle cx="480" cy="300" r="96" fill="#181410" stroke="#c9a87c" stroke-width="2"/>
+  <circle cx="480" cy="300" r="118" fill="none" stroke="#5a4832" stroke-width="1.5"/>
+  <text x="480" y="284" fill="#f1efe9" font-size="24" font-family="JetBrains Mono, monospace" text-anchor="middle" letter-spacing="3">MCCASLAND</text>
+  <text x="480" y="315" fill="#c9a87c" font-size="14" font-family="JetBrains Mono, monospace" text-anchor="middle" letter-spacing="2">UAP / SAP NEXUS</text>
+  <g font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2" text-anchor="middle">
+    <g>
+      <circle cx="165" cy="156" r="54" fill="#0f0f0f" stroke="#6c9acd"/>
+      <text x="165" y="152" fill="#dce8f6">SAPOC</text>
+      <text x="165" y="172" fill="#8ca6c4">OVERSIGHT</text>
+    </g>
+    <g>
+      <circle cx="480" cy="114" r="54" fill="#0f0f0f" stroke="#56b29a"/>
+      <text x="480" y="111" fill="#e0fff5">AFRL</text>
+      <text x="480" y="131" fill="#91cbbd">COMMAND</text>
+    </g>
+    <g>
+      <circle cx="795" cy="156" r="54" fill="#0f0f0f" stroke="#d4a843"/>
+      <text x="795" y="151" fill="#fce8b4">DISCLOSURE</text>
+      <text x="795" y="171" fill="#d8b56a">NETWORK</text>
+    </g>
+    <g>
+      <circle cx="220" cy="454" r="54" fill="#0f0f0f" stroke="#c85f88"/>
+      <text x="220" y="449" fill="#ffd6e7">WRIGHT-</text>
+      <text x="220" y="469" fill="#db88a9">PATTERSON</text>
+    </g>
+    <g>
+      <circle cx="480" cy="486" r="54" fill="#0f0f0f" stroke="#56b29a"/>
+      <text x="480" y="481" fill="#e0fff5">KIRTLAND</text>
+      <text x="480" y="501" fill="#91cbbd">NEW MEXICO</text>
+    </g>
+    <g>
+      <circle cx="748" cy="454" r="54" fill="#0f0f0f" stroke="#c54f45"/>
+      <text x="748" y="449" fill="#ffd6d2">FORENSICS</text>
+      <text x="748" y="469" fill="#de8b82">ABSENCE</text>
+    </g>
+  </g>
+</svg>
