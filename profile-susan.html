@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Profile: Susan McCasland Wilkerson | McCasland Investigation</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/site.css">
+  <script defer src="assets/site.js"></script>
+  <style>
+    .profile-header {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+
+    .profile-photo {
+      width: 200px;
+      height: 240px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .profile-photo svg { width: 100%; height: 100%; }
+
+    .profile-identity h1 {
+      font-size: 32px;
+      font-weight: 200;
+      color: var(--text-bright);
+      margin: 0 0 4px;
+    }
+
+    .profile-identity .profile-rank {
+      font-size: 16px;
+      color: var(--accent);
+      font-weight: 300;
+      margin: 0 0 16px;
+    }
+
+    .profile-identity .profile-status-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .profile-vitals {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .vital {
+      padding: 12px 16px;
+      border-right: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+
+    .vital:last-child { border-right: none; }
+
+    .vital-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-faint);
+      margin-bottom: 4px;
+    }
+
+    .vital-value {
+      font-size: 13px;
+      color: var(--text-primary);
+    }
+
+    .career-timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .career-timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .career-entry {
+      position: relative;
+      margin-bottom: 24px;
+      padding-left: 20px;
+    }
+
+    .career-entry::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--text-faint);
+      background: var(--surface-4);
+    }
+
+    .career-entry.highlight::before {
+      border-color: var(--accent);
+      background: rgba(201, 168, 124, 0.2);
+    }
+
+    .career-entry.critical::before {
+      border-color: var(--alert);
+      background: rgba(204, 68, 68, 0.2);
+    }
+
+    .career-dates {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      color: var(--text-faint);
+      margin-bottom: 4px;
+    }
+
+    .career-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin: 0 0 2px;
+    }
+
+    .career-location {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin: 0 0 6px;
+    }
+
+    .career-note {
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .connection-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      padding: 16px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-2);
+      margin-bottom: 12px;
+      align-items: center;
+    }
+
+    .connection-type {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    .connection-type.family { color: var(--accent); background: var(--accent-soft); }
+    .connection-type.professional { color: var(--inferred); background: var(--inferred-soft); }
+    .connection-type.disclosure { color: var(--claimed); background: var(--claimed-soft); }
+
+    .connection-name { font-size: 14px; font-weight: 400; color: var(--text-primary); margin: 0; }
+    .connection-detail { font-size: 12px; color: var(--text-dim); margin: 2px 0 0; }
+
+    /* Statement analysis */
+    .statement-block {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      background: var(--surface-2);
+      margin-bottom: 16px;
+    }
+
+    .statement-block blockquote {
+      margin: 0 0 12px;
+      padding-left: 16px;
+      border-left: 2px solid rgba(201, 168, 124, 0.3);
+      color: var(--text-primary);
+      font-size: 14px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .statement-block .analysis {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    @media (max-width: 860px) {
+      .profile-header { grid-template-columns: 1fr; }
+      .profile-photo { width: 160px; height: 192px; }
+      .profile-vitals { grid-template-columns: 1fr; }
+      .vital { border-right: none; border-bottom: 1px solid var(--border); }
+      .vital:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="global-nav" aria-label="Primary">
+    <div class="brand-lockup">
+      <div class="brand-label">Dossier // McCasland</div>
+      <div class="brand-subtitle">Subject profile</div>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" data-nav-file="index.html" href="index.html">Home</a>
+      <a class="nav-link" data-nav-file="mccasland-investigation.html" href="mccasland-investigation.html">Overview</a>
+      <a class="nav-link" data-nav-file="profile-mccasland.html" href="profile-mccasland.html">McCasland</a>
+      <a class="nav-link" data-nav-file="profile-susan.html" href="profile-susan.html">Susan Wilkerson</a>
+      <a class="nav-link" data-nav-file="uap-sap-nexus.html" href="uap-sap-nexus.html">UAP / SAP</a>
+      <a class="nav-link" data-nav-file="disclosure-network.html" href="disclosure-network.html">Network</a>
+      <a class="nav-link" data-nav-file="wright-patterson-chain.html" href="wright-patterson-chain.html">Wright-Pat</a>
+      <a class="nav-link" data-nav-file="kirtland-nexus.html" href="kirtland-nexus.html">Kirtland</a>
+      <a class="nav-link" data-nav-file="disappearance-forensics.html" href="disappearance-forensics.html">Forensics</a>
+    </div>
+    <div class="nav-status" id="nav-day-status">Subject profile</div>
+  </nav>
+
+  <div class="site-shell">
+    <div class="page-frame">
+
+      <header class="hero-panel" style="padding-bottom: 40px;">
+        <div class="eyebrow">Subject profile // secondary</div>
+
+        <div class="profile-header">
+          <div class="profile-photo">
+            <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="240" fill="#0a0a0a"/>
+              <circle cx="100" cy="82" r="38" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1"/>
+              <ellipse cx="100" cy="200" rx="55" ry="48" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1"/>
+              <text x="100" y="245" text-anchor="middle" fill="#333" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="0.15em">NO PUBLIC PHOTO</text>
+            </svg>
+          </div>
+
+          <div class="profile-identity">
+            <h1>Susan McCasland Wilkerson</h1>
+            <p class="profile-rank">Colonel, United States Air Force Reserve (Retired) · Ph.D. Astrophysics</p>
+
+            <div class="profile-status-row">
+              <span class="chip"><strong>Role</strong> Spouse of missing subject</span>
+              <span class="chip"><strong>Status</strong> Primary public spokesperson</span>
+            </div>
+
+            <div class="profile-vitals">
+              <div class="vital">
+                <div class="vital-label">Full name</div>
+                <div class="vital-value">Mary Susan Wilkerson McCasland</div>
+              </div>
+              <div class="vital">
+                <div class="vital-label">Date of birth</div>
+                <div class="vital-value">November 8, 1953 · San Diego, CA</div>
+              </div>
+              <div class="vital">
+                <div class="vital-label">Education</div>
+                <div class="vital-value">Ph.D. Astrophysics, University of Arizona (1979)</div>
+              </div>
+              <div class="vital">
+                <div class="vital-label">Military rank</div>
+                <div class="vital-value">Colonel, USAF Reserve (Retired)</div>
+              </div>
+              <div class="vital">
+                <div class="vital-label">Spouse</div>
+                <div class="vital-value"><a href="profile-mccasland.html" style="color: var(--accent); text-decoration: none;">William Neil McCasland →</a></div>
+              </div>
+              <div class="vital">
+                <div class="vital-label">Clearance history</div>
+                <div class="vital-value">TS/SCI (classified satellite imagery, Defense Dissemination Program)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-grid">
+        <main class="content-main">
+
+          <!-- WHY SHE MATTERS -->
+          <section class="section-block" id="significance">
+            <div class="section-kicker">Why this profile exists</div>
+            <h2 class="section-title">This is not an ordinary military spouse</h2>
+            <p class="section-intro">
+              Susan McCasland Wilkerson holds a PhD in astrophysics, was a NASA astronaut semifinalist, held
+              TS/SCI clearances, handled classified satellite imagery, and was independently invited to a
+              Podesta-organized meeting on UAP disclosure. She is not peripheral to this investigation — she is
+              a node in it.
+            </p>
+
+            <div class="summary-grid">
+              <article class="summary-card">
+                <span class="evidence-label documented">Documented</span>
+                <h3>Independent scientific credentials</h3>
+                <p>PhD astrophysics at 25, Westinghouse Science Talent Search honoree at 17, NASA astronaut semifinalist at 26. These are not inherited through marriage — they predate her relationship with McCasland by years.</p>
+              </article>
+              <article class="summary-card">
+                <span class="evidence-label documented">Documented</span>
+                <h3>Parallel classified access</h3>
+                <p>Both McCaslands held TS/SCI clearances. Both worked in classified space programs. Susan handled classified satellite imagery through the Defense Dissemination Program. This is a dual-clearance household.</p>
+              </article>
+              <article class="summary-card">
+                <span class="evidence-label documented">Documented</span>
+                <h3>Independent Podesta meeting invitation</h3>
+                <p>WikiLeaks email #2635 shows Susan was invited separately to the January 25, 2016 UAP disclosure meeting — her own RSVP, not as a plus-one. Both McCaslands were expected at the table.</p>
+              </article>
+              <article class="summary-card">
+                <span class="evidence-label inferred">Inferred</span>
+                <h3>The "dual-node" implication</h3>
+                <p>When both halves of a household independently hold clearances, work in classified space programs, and separately receive invitations to a UAP disclosure meeting, the household itself becomes an intelligence node — not just one person within it.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- EARLY CAREER -->
+          <section class="section-block" id="early">
+            <div class="section-kicker">Early distinction</div>
+            <h2 class="section-title">From Westinghouse honoree to NASA astronaut candidate</h2>
+
+            <div class="career-timeline">
+              <div class="career-entry highlight">
+                <div class="career-dates">1971 · Age 17</div>
+                <h3 class="career-title">Westinghouse Science Talent Search Honoree</h3>
+                <p class="career-location">San Diego, California</p>
+                <p class="career-note">Now called Regeneron STS — the most prestigious pre-college science competition in the United States. Selection at 17 marks early identification as an exceptional scientific talent.</p>
+              </div>
+
+              <div class="career-entry">
+                <div class="career-dates">c. 1971 — 1979</div>
+                <h3 class="career-title">Ph.D. Astrophysics, University of Arizona</h3>
+                <p class="career-location">Tucson, Arizona</p>
+                <p class="career-note">Completed doctorate by age 25. The University of Arizona's Steward Observatory is one of the top astrophysics programs in the country — particularly in optical/infrared astronomy and space instrumentation.</p>
+              </div>
+
+              <div class="career-entry critical">
+                <div class="career-dates">1980</div>
+                <h3 class="career-title">NASA Group 9 Astronaut Semifinalist</h3>
+                <p class="career-location">Johnson Space Center, Houston, TX / Lackland AFB, TX</p>
+                <p class="career-note">Selected as a semifinalist in the astronaut class that included Sally Ride, Judith Resnik, and Guy Bluford. She was assigned to Lackland AFB at the time. Withdrew May 29, 1980 — reasons not publicly specified. Commissioned as USAF Lieutenant instead.</p>
+              </div>
+
+              <div class="career-entry">
+                <div class="career-dates">1980</div>
+                <h3 class="career-title">Commissioned, United States Air Force</h3>
+                <p class="career-location">Active duty</p>
+                <p class="career-note">Entered active duty as a Lieutenant after withdrawing from astronaut candidacy. Career progression to Captain (1984), then Lt. Colonel / Colonel in the Air Force Reserve.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- MILITARY & CLASSIFIED CAREER -->
+          <section class="section-block" id="classified">
+            <div class="section-kicker">Military & classified career</div>
+            <h2 class="section-title">The assignments that matter to this investigation</h2>
+
+            <div class="career-timeline">
+              <div class="career-entry highlight">
+                <div class="career-dates">Early 1980s</div>
+                <h3 class="career-title">Senior Scientist, Air Force Geophysics Laboratory</h3>
+                <p class="career-location">Sacramento Peak Observatory, Sunspot, New Mexico</p>
+                <p class="career-note">Solar observation and atmospheric research at the Air Force's dedicated solar research facility in southern New Mexico. First intersection with the New Mexico defense ecosystem.</p>
+              </div>
+
+              <div class="career-entry critical">
+                <div class="career-dates">Mid-1980s</div>
+                <h3 class="career-title">Chief, Data Recorder Branch / Director of Advanced Studies, Defense Dissemination Program</h3>
+                <p class="career-location">HQ Space Division, El Segundo, California</p>
+                <p class="career-note"><strong>The classified access marker.</strong> The Defense Dissemination Program handled distribution of classified satellite imagery and related intelligence products. This role required TS/SCI clearance and placed her directly inside the classified space intelligence pipeline — parallel to, but independent from, her husband's NRO-affiliated work.</p>
+              </div>
+
+              <div class="career-entry">
+                <div class="career-dates">Ongoing</div>
+                <h3 class="career-title">Colonel, Air Force Reserve</h3>
+                <p class="career-location">Various</p>
+                <p class="career-note">Maintained Reserve status through Colonel rank. Reserve officers with active clearances can be recalled for classified briefings and consultations — a mechanism that extends access well beyond active-duty retirement dates.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- INDUSTRY CAREER -->
+          <section class="section-block" id="industry">
+            <div class="section-kicker">Defense industry</div>
+            <h2 class="section-title">Post-active-duty career in defense contracting</h2>
+
+            <div class="career-timeline">
+              <div class="career-entry">
+                <div class="career-dates">1985 — 1993</div>
+                <h3 class="career-title">TASC (The Analytic Sciences Corporation)</h3>
+                <p class="career-note">Defense analytics company. Married Neil McCasland in April 1985 during his MIT doctoral years while she was at TASC. The company specialized in technical analysis for national security clients.</p>
+              </div>
+
+              <div class="career-entry">
+                <div class="career-dates">Post-1993</div>
+                <h3 class="career-title">Boeing-SVS, Inc.</h3>
+                <p class="career-note">Program manager at Boeing's Space and Verification Services division. Continued work in the defense/space industrial base.</p>
+              </div>
+
+              <div class="career-entry">
+                <div class="career-dates">Subsequent</div>
+                <h3 class="career-title">FlightSafety Services Corporation</h3>
+                <p class="career-note">Defense contractor providing simulation and training services.</p>
+              </div>
+
+              <div class="career-entry">
+                <div class="career-dates">Later career</div>
+                <h3 class="career-title">Raytheon</h3>
+                <p class="career-note">Major defense prime contractor. Specific role and duration not publicly documented.</p>
+              </div>
+
+              <div class="career-entry">
+                <div class="career-dates">Recent</div>
+                <h3 class="career-title">Joint defense consulting (with William McCasland)</h3>
+                <p class="career-note">Reports indicate the McCaslands co-operated a defense consulting practice in Albuquerque, working within the same technology and institutional ecosystem.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- DISCLOSURE CONNECTION -->
+          <section class="section-block" id="disclosure">
+            <div class="section-kicker">Disclosure nexus</div>
+            <h2 class="section-title">The Podesta meeting and the independent RSVP</h2>
+
+            <div class="callout-card">
+              <span class="evidence-label documented">Documented</span>
+              <h3>WikiLeaks Email #2635</h3>
+              <p>Susan McCasland Wilkerson was independently invited to the January 25, 2016 meeting organized by John Podesta to discuss UAP disclosure strategy. She RSVPed separately from her husband. The meeting included DeLonge, Rob Weiss (Skunk Works), and other figures in the disclosure network.</p>
+            </div>
+
+            <div class="summary-grid" style="margin-top: 20px;">
+              <article class="summary-card">
+                <span class="evidence-label documented">Documented</span>
+                <h3>Separate invitation, separate RSVP</h3>
+                <p>This is not "the general's wife tagged along." The email chain shows Susan was invited as her own participant — implying the organizers considered her credentials and knowledge independently relevant.</p>
+              </article>
+              <article class="summary-card">
+                <span class="evidence-label inferred">Inferred</span>
+                <h3>What the invitation implies about her knowledge</h3>
+                <p>You don't invite someone to a sensitive UAP disclosure strategy meeting unless you believe they bring something to the table. For Susan, that "something" is likely her astrophysics expertise, her classified satellite imagery background, or both.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- PUBLIC STATEMENTS -->
+          <section class="section-block" id="statements">
+            <div class="section-kicker">Post-disappearance statements</div>
+            <h2 class="section-title">What Susan has said — and what she hasn't</h2>
+            <p class="section-intro">
+              Susan's primary public statement came via Facebook on approximately March 6, 2026 — one week
+              after the disappearance. It remains the most detailed family communication in the public record.
+            </p>
+
+            <div class="statement-block">
+              <blockquote>"He has medical risks but not dementia, Alzheimer's, or confusion. He was not disoriented."</blockquote>
+              <p class="analysis"><span class="evidence-label disputed" style="margin-right: 8px;">Disputed</span> This directly contradicts the legal basis for the Silver Alert, which requires "irreversible deterioration of intellectual faculties." Either the criteria were stretched, or Susan is parsing terminology — "not dementia" doesn't necessarily mean "no cognitive issues."</p>
+            </div>
+
+            <div class="statement-block">
+              <blockquote>"There was no concerning Friday-morning phone call to relatives."</blockquote>
+              <p class="analysis"><span class="evidence-label documented" style="margin-right: 8px;">Documented</span> This reads as a specific denial of a specific rumor circulating in online communities. She confirms "contact with family" that morning but provides no further detail about household movements.</p>
+            </div>
+
+            <div class="statement-block">
+              <blockquote>"He retired nearly 13 years ago with only common clearances since."</blockquote>
+              <p class="analysis"><span class="evidence-label documented" style="margin-right: 8px;">Documented</span> A deliberate pushback against the idea he remained operationally involved in classified programs. Notable that she specifies "common clearances" — acknowledging some clearance level remained, just not SAP-level access.</p>
+            </div>
+
+            <div class="statement-block">
+              <blockquote>[Explicitly denied UFO-related abduction claims and fabricated stories]</blockquote>
+              <p class="analysis"><span class="evidence-label documented" style="margin-right: 8px;">Documented</span> She called out specific online fabrications. Her tone reads as genuine distress at sensationalization, not as performance.</p>
+            </div>
+
+            <div class="callout-card" style="margin-top: 20px;">
+              <span class="evidence-label inferred">Inferred</span>
+              <h3>What the statements omit</h3>
+              <p>Susan's statement is notable for what it doesn't say: the specific medical condition that triggered the Silver Alert, the exact timeline of that morning (when she realized he was gone, how long before calling authorities), whether his vehicle was present, and what the dogs may have found. She addresses the most sensational claims while declining to provide the granular detail that would help reconstruct the morning itself.</p>
+            </div>
+          </section>
+
+          <!-- INVESTIGATIVE SIGNIFICANCE -->
+          <section class="section-block" id="significance-summary">
+            <div class="section-kicker">Assessment</div>
+            <h2 class="section-title">Why Susan changes the shape of this investigation</h2>
+
+            <div class="summary-grid">
+              <article class="summary-card">
+                <span class="evidence-label inferred">Inferred</span>
+                <h3>The household is the unit of analysis, not just the individual</h3>
+                <p>When both halves of a marriage hold independent TS/SCI clearances, work in classified space programs, and are separately invited to UAP disclosure meetings, the intelligence picture isn't about one person. It's about a household with dual channels into the classified world.</p>
+              </article>
+              <article class="summary-card">
+                <span class="evidence-label inferred">Inferred</span>
+                <h3>Her scientific training adds a dimension he doesn't have</h3>
+                <p>McCasland is an engineer and program manager. Susan is a PhD astrophysicist with observation and imaging expertise. If UAP-related evidence involves anomalous observations or imagery analysis, her skills are independently relevant — which may explain the separate Podesta invitation.</p>
+              </article>
+              <article class="summary-card">
+                <span class="evidence-label documented">Documented</span>
+                <h3>She remains the primary gatekeeper of information</h3>
+                <p>As the closest person to the subject and the family's public spokesperson, Susan controls the narrative more than any other single individual. What she chooses to share — and what she doesn't — shapes what the public can and cannot analyze.</p>
+              </article>
+              <article class="summary-card">
+                <span class="evidence-label inferred">Inferred</span>
+                <h3>She is unharmed</h3>
+                <p>If the disappearance were targeting McCasland specifically because of what he knows, the fact that Susan — who holds parallel knowledge and access — is unharmed is either evidence against a targeted action or evidence that the targeting was narrowly scoped to him specifically.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- CROSS-REFERENCES -->
+          <section class="section-block" id="cross-ref">
+            <div class="section-kicker">Cross-references</div>
+            <h2 class="section-title">Continue the investigation</h2>
+            <div class="button-row">
+              <a class="button-link" href="profile-mccasland.html">William McCasland profile →</a>
+              <a class="button-link" href="disclosure-network.html">Disclosure Network →</a>
+              <a class="button-link" href="disappearance-forensics.html">Disappearance forensics →</a>
+              <a class="button-link ghost" href="uap-sap-nexus.html">UAP / SAP Nexus →</a>
+            </div>
+          </section>
+
+        </main>
+
+        <aside class="side-rail">
+          <div class="rail-card">
+            <div class="rail-label">On this page</div>
+            <nav class="section-nav" aria-label="Section navigation">
+              <a class="section-link" data-section-link href="#significance">Why she matters</a>
+              <a class="section-link" data-section-link href="#early">Early career</a>
+              <a class="section-link" data-section-link href="#classified">Classified career</a>
+              <a class="section-link" data-section-link href="#industry">Defense industry</a>
+              <a class="section-link" data-section-link href="#disclosure">Disclosure nexus</a>
+              <a class="section-link" data-section-link href="#statements">Public statements</a>
+              <a class="section-link" data-section-link href="#significance-summary">Assessment</a>
+              <a class="section-link" data-section-link href="#cross-ref">Cross-references</a>
+            </nav>
+          </div>
+
+          <div class="legend-card">
+            <div class="legend-label">Profile basis</div>
+            <p class="caption">
+              Compiled from NASA astronaut records, WikiLeaks Podesta email archive, Facebook statements (March 2026),
+              USAF records, defense contractor histories, and the original research dossier.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-label">Subject profile</div>
+            <p>Susan McCasland Wilkerson — secondary subject, spouse of missing person.</p>
+          </div>
+          <div>
+            <div class="footer-label">Related profile</div>
+            <p><a href="profile-mccasland.html">William Neil McCasland →</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
