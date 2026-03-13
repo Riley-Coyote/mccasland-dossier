@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap");
-
 :root {
   --void: #000000;
   --surface-1: #050505;
@@ -49,8 +47,8 @@ body {
   min-height: 100vh;
   color: var(--text-body);
   background: var(--void);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-weight: 300;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -84,8 +82,8 @@ select {
   height: 52px;
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding: 0 32px;
+  gap: 28px;
+  padding: 0 28px;
   border-bottom: 1px solid var(--border);
   background: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(20px);
@@ -112,9 +110,10 @@ select {
 .status-pill,
 .summary-label,
 .table-label {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
 }
 
 .brand-label {
@@ -147,6 +146,7 @@ select {
   text-decoration: none;
   font-size: 10px;
   font-weight: 400;
+  letter-spacing: 0.08em;
   transition: all 0.2s;
   white-space: nowrap;
   border: none;
@@ -188,14 +188,14 @@ select {
 .page-frame {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 28px 32px 120px;
+  padding: 24px 28px 100px;
 }
 
 .hero-panel {
   position: relative;
   overflow: visible;
-  margin-bottom: 60px;
-  padding: 80px 0 60px;
+  margin-bottom: 52px;
+  padding: 72px 0 52px;
   border: none;
   border-bottom: 1px solid var(--border);
   border-radius: 0;
@@ -228,7 +228,7 @@ select {
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.9fr);
-  gap: 24px;
+  gap: 20px;
   align-items: start;
 }
 
@@ -238,7 +238,7 @@ select {
   line-height: 1.1;
   font-weight: 200;
   color: var(--text-bright);
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .hero-title strong {
@@ -270,7 +270,7 @@ select {
 .source-grid,
 .quote-grid {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .hero-meta-grid {
@@ -308,7 +308,7 @@ select {
 .source-card,
 .rail-card,
 .fact-card {
-  padding: 18px 18px 16px;
+  padding: 16px 16px 14px;
 }
 
 .meta-label,
@@ -373,7 +373,7 @@ select {
 .content-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 270px;
-  gap: 28px;
+  gap: 24px;
   align-items: start;
 }
 
@@ -386,7 +386,7 @@ select {
   top: 72px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .section-nav {
@@ -434,6 +434,7 @@ select {
   border: 1px solid transparent;
   font-size: 9px;
   line-height: 1;
+  font-weight: 500;
   letter-spacing: 0.08em;
 }
 
@@ -471,7 +472,7 @@ select {
 
 .section-block {
   position: relative;
-  margin-bottom: 72px;
+  margin-bottom: 60px;
   padding: 0;
   border: none;
   border-radius: 0;
@@ -523,7 +524,7 @@ select {
 }
 
 .stat-grid {
-  margin-top: 22px;
+  margin-top: 18px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -557,7 +558,7 @@ select {
 .fact-card h3 {
   margin: 12px 0 8px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--text-primary);
 }
 
@@ -599,7 +600,7 @@ select {
 .route-card h3 {
   margin: 10px 0 8px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--text-primary);
 }
 
@@ -636,7 +637,7 @@ select {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .button-link {
@@ -696,9 +697,9 @@ select {
 
 .diagram-node text {
   fill: var(--text);
-  font-family: "JetBrains Mono", monospace;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -824,8 +825,10 @@ select {
 }
 
 .timeline-item .timeline-date {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   color: var(--text-faint);
   margin-bottom: 6px;
 }
@@ -877,6 +880,7 @@ td {
 }
 
 th {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 10px;
   font-weight: 500;
   color: var(--text-faint);
@@ -973,7 +977,7 @@ td {
 }
 
 .footer {
-  margin-top: 80px;
+  margin-top: 64px;
   padding: 40px 0;
   border-top: 1px solid var(--border);
   color: var(--text-faint);
